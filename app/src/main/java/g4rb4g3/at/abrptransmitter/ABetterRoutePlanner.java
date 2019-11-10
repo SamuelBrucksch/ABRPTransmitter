@@ -50,7 +50,7 @@ public class ABetterRoutePlanner {
   public static final String ABETTERROUTEPLANNER_JSON_CAR_MODEL = "car_model";
   public static final String ABETTERROUTEPLANNER_JSON_CAR_MODEL_IONIQ28 = "hyundai:ioniq:17:28:other";
 
-  private static final String ABETTERROUTEPLANNER_API_KEY = "INSERT YOU API KEY HERE";
+  public static final String ABETTERROUTEPLANNER_API_KEY = "INSERT YOU API KEY HERE";
 
   private static String mAbetterrouteplanner_token = null;
   private static GreenCarManager mGreenCarManager;

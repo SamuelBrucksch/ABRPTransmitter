@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
                 // save after every text change so we do not need save button
                 SharedPreferences.Editor sped = sp.edit();
                 sped.putString(PREFERENCES_TOKEN, textViewToken.getText().toString());
-                sped.commit();
+                sped.apply();
             }
         });
 
@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
                 // save after every toggle of checkbox so we do not need save button
                 SharedPreferences.Editor sped = sp.edit();
                 sped.putBoolean(PREFERENCES_TRANSMIT_DATA, isChecked);
-                sped.commit();
+                sped.apply();
             }
         });
     }

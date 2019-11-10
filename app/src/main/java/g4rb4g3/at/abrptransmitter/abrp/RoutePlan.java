@@ -17,7 +17,7 @@ import g4rb4g3.at.abrptransmitter.abrp.gson.GsonRoutePlan;
 
 public class RoutePlan {
 
-    public static final String ABETTERROUTEPLANNER_URL = "https://api.iternio.com/1/tlm/get_latest_plan?";
+    private static final String ABETTERROUTEPLANNER_URL = "https://api.iternio.com/1/tlm/get_latest_plan?";
 
     private static AsyncHttpClient asyncHttpClient;
 
