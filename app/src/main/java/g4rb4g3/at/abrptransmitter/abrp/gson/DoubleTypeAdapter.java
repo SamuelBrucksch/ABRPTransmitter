@@ -29,9 +29,6 @@ public class DoubleTypeAdapter extends TypeAdapter<Double> {
             case NULL:
                 in.nextNull();
                 return null;
-            case BOOLEAN:
-                in.nextBoolean();
-                return null;
             default:
                 throw new JsonSyntaxException("Expecting number, got: " + jsonToken);
         }
