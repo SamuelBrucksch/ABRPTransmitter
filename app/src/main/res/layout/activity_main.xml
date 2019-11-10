@@ -7,30 +7,30 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/abrp_mail"
+        android:id="@+id/abrp_token"
         android:layout_width="0dp"
         android:layout_height="23dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
-        android:text="@string/abrp_mail"
+        android:text="@string/abrp_token"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/tv_abrp_mail"
+        android:id="@+id/tv_abrp_token"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:ems="10"
-        android:inputType="textEmailAddress"
+        android:inputType="text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.615"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/abrp_mail" />
+        app:layout_constraintTop_toBottomOf="@+id/abrp_token" />
 
     <Button
         android:id="@+id/save"
@@ -53,5 +53,5 @@
         android:layout_marginTop="8dp"
         android:text="@string/transmit_data"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_abrp_mail" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_abrp_token" />
 </android.support.constraint.ConstraintLayout>

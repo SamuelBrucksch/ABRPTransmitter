@@ -2,20 +2,12 @@ package g4rb4g3.at.abrptransmitter;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.google.gson.JsonSyntaxException;
-import com.google.gson.TypeAdapter;
-import com.google.gson.TypeAdapterFactory;
 import com.google.gson.internal.bind.TypeAdapters;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonToken;
-import com.google.gson.stream.JsonWriter;
 
 import org.junit.Test;
 
-import java.io.IOException;
-
 import g4rb4g3.at.abrptransmitter.abrp.gson.DoubleTypeAdapter;
-import g4rb4g3.at.abrptransmitter.abrp.gson.GsonRoute;
+import g4rb4g3.at.abrptransmitter.abrp.gson.GsonRoutePlan;
 import g4rb4g3.at.abrptransmitter.abrp.gson.Metadata;
 import g4rb4g3.at.abrptransmitter.abrp.gson.Route;
 
@@ -31,14 +23,14 @@ public class GsonUnitTest {
         builder.registerTypeAdapterFactory(TypeAdapters.newFactory(double.class, Double.class, new DoubleTypeAdapter()));
         Gson gson = builder.create();
 
-        GsonRoute gsonRoute = gson.fromJson(json, GsonRoute.class);
-        assertEquals(gsonRoute.getStatus(), "ok");
+        GsonRoutePlan routePlan = gson.fromJson(json, GsonRoutePlan.class);
+        assertEquals(routePlan.getStatus(), "ok");
 
-        Metadata metaData = gsonRoute.getMetadata();
+        Metadata metaData = routePlan.getMetadata();
         assertEquals(metaData.getPlanTime(), 1.0441479682922363d, 0.00001d);
         assertEquals(metaData.getPlanUuid(), "550a4c1a-c275-4db2-a482-3b698688d784");
 
-        Route route = gsonRoute.getResult().getRoutes().get(0);
+        Route route = routePlan.getResult().getRoutes().get(0);
         assertEquals(route.getSteps().size(), 5);
     }
 }
