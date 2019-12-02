@@ -1,5 +1,6 @@
 package g4rb4g3.at.abrptransmitter.goingelectric;
 
+import android.content.res.Resources;
 import android.location.Location;
 import android.util.Log;
 
@@ -76,7 +77,7 @@ public class GoingElectric {
         StringBuilder url = new StringBuilder(GOINGELECTRIC_URL)
                 .append(GOINGELECTRIC_URL_API_KEY)
                 .append("=")
-                .append(R.string.GOINGELECTRIC_API_KEY)
+                .append(Resources.getSystem().getString(R.string.GOINGELECTRIC_API_KEY))
                 .append("&")
                 .append(GOINGELECTRIC_URL_API_LAT)
                 .append("=")

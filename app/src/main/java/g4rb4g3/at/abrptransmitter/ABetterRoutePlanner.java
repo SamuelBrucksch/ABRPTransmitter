@@ -2,6 +2,7 @@ package g4rb4g3.at.abrptransmitter;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.content.res.Resources;
 import android.location.Location;
 import android.util.Log;
 
@@ -84,11 +85,12 @@ public class ABetterRoutePlanner {
   };
 
   static {
+    asyncHttpClient  = new AsyncHttpClient(true, 80, 443);
+    asyncHttpClient.setTimeout((int)sendUpdateInterval - 200); // request needs to timeout before next request so we do not end up with multiple concurrent requests
+
     mCarInfoManager = CarInfoManager.getInstance();
     mGreenCarManager = GreenCarManager.getInstance(null);
     mHvacManager = HvacManager.getInstance();
-    asyncHttpClient  = new AsyncHttpClient(true, 80, 443);
-    asyncHttpClient.setTimeout((int)sendUpdateInterval - 200); // request needs to timeout before next request so we do not end up with multiple concurrent requests
 
     mBatteryChargeListener = new BatteryChargeListener();
     mGreenCarManager.register(mBatteryChargeListener);
@@ -188,7 +190,7 @@ public class ABetterRoutePlanner {
 
     StringBuilder url = new StringBuilder(ABETTERROUTEPLANNER_URL)
         .append(ABETTERROUTEPLANNER_URL_TOKEN).append("=").append(mAbetterrouteplanner_token)
-        .append("&").append(ABETTERROUTEPLANNER_URL_API_KEY).append("=").append(R.string.ABRP_API_KEY)
+        .append("&").append(ABETTERROUTEPLANNER_URL_API_KEY).append("=").append(Resources.getSystem().getString(R.string.ABRP_API_KEY))
         .append("&").append(ABETTERROUTEPLANNER_URL_TELEMETRY).append("=");
     try {
       url.append(URLEncoder.encode(jTlmObj.toString(), "UTF-8"));
