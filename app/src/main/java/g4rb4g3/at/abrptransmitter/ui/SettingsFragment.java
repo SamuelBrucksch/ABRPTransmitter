@@ -36,10 +36,9 @@ public class SettingsFragment extends Fragment {
         View view =  inflater.inflate(R.layout.settings, container, false);
 
         final SharedPreferences sp = getActivity().getSharedPreferences(PREFERENCES_NAME, Context.MODE_PRIVATE);
-        sp.registerOnSharedPreferenceChangeListener(ABetterRoutePlanner.getInstance());
 
         final TextView textViewToken = view.findViewById(R.id.tv_abrp_token);
-        textViewToken.setText(sp.getString(PREFERENCES_TOKEN, "51dfbb08-b402-4aed-a4a8-59d5be25af36"));
+        textViewToken.setText(sp.getString(PREFERENCES_TOKEN, ""));
         textViewToken.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
