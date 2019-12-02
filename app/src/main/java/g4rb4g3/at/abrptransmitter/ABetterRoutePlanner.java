@@ -52,8 +52,6 @@ public class ABetterRoutePlanner {
   public static final String ABETTERROUTEPLANNER_JSON_CAR_MODEL = "car_model";
   public static final String ABETTERROUTEPLANNER_JSON_CAR_MODEL_IONIQ28 = "hyundai:ioniq:17:28:other";
 
-  private static final String ABETTERROUTEPLANNER_API_KEY = "INSERT YOU API KEY HERE";
-
   private static String mAbetterrouteplanner_token = null;
   private static GreenCarManager mGreenCarManager;
   private static IBatteryChargeListener mBatteryChargeListener;
@@ -190,7 +188,7 @@ public class ABetterRoutePlanner {
 
     StringBuilder url = new StringBuilder(ABETTERROUTEPLANNER_URL)
         .append(ABETTERROUTEPLANNER_URL_TOKEN).append("=").append(mAbetterrouteplanner_token)
-        .append("&").append(ABETTERROUTEPLANNER_URL_API_KEY).append("=").append(ABETTERROUTEPLANNER_API_KEY)
+        .append("&").append(ABETTERROUTEPLANNER_URL_API_KEY).append("=").append(R.string.ABRP_API_KEY)
         .append("&").append(ABETTERROUTEPLANNER_URL_TELEMETRY).append("=");
     try {
       url.append(URLEncoder.encode(jTlmObj.toString(), "UTF-8"));

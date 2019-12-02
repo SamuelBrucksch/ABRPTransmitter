@@ -13,6 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import cz.msebera.android.httpclient.Header;
+import g4rb4g3.at.abrptransmitter.R;
 import g4rb4g3.at.abrptransmitter.gson.GSONDoubleTypeAdapter;
 import g4rb4g3.at.abrptransmitter.gson.goingelectric.GoingElectricGSON;
 
@@ -25,7 +26,6 @@ public class GoingElectric {
     public static final String GOINGELECTRIC_URL_API_RADIUS = "radius";
     public static final String GOINGELECTRIC_URL_API_ORDERBY = "orderby";
     public static final String GOINGELECTRIC_URL_API_PLUGTYPE = "plugs";
-    public static final String GOINGELECTRIC_API_KEY = "INSERT YOU API KEY HERE";
 
     private static AsyncHttpClient asyncHttpClient;
 
@@ -76,7 +76,7 @@ public class GoingElectric {
         StringBuilder url = new StringBuilder(GOINGELECTRIC_URL)
                 .append(GOINGELECTRIC_URL_API_KEY)
                 .append("=")
-                .append(GOINGELECTRIC_API_KEY)
+                .append(R.string.GOINGELECTRIC_API_KEY)
                 .append("&")
                 .append(GOINGELECTRIC_URL_API_LAT)
                 .append("=")

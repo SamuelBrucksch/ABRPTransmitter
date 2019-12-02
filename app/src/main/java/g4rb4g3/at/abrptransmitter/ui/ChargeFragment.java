@@ -29,7 +29,6 @@ import g4rb4g3.at.abrptransmitter.ui.chargers.ChargerEntryLayout;
 
 public class ChargeFragment extends Fragment implements IChargers {
 
-    private SharedPreferences sharedPrefs;
     private View view;
 
     private final String PREFERENCES_CCS_ENABLED = "ccsEnabled";

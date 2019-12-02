@@ -9,17 +9,13 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 import g4rb4g3.at.abrptransmitter.R;
 
-/**
- * A [FragmentPagerAdapter] that returns a fragment corresponding to
- * one of the sections/tabs/pages.
- */
 public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
     @StringRes
     private static final int[] TAB_TITLES = new int[]{R.string.tab_chargers, R.string.tab_settings};
     private final Context mContext;
 
-    private static final int CHARGE = 0;
+    private static final int CHARGER = 0;
     private static final int SETTINGS = 1;
 
     public SectionsPagerAdapter(Context context, FragmentManager fm) {
@@ -30,10 +26,10 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
     @Override
     public Fragment getItem(int position) {
         switch (position) {
+            case CHARGER:
+                return ChargeFragment.newInstance();
             case SETTINGS:
                 return SettingsFragment.newInstance();
-            case CHARGE:
-                return ChargeFragment.newInstance();
         }
         return new Fragment();
     }
