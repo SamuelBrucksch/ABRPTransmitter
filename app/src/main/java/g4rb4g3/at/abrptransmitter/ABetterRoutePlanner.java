@@ -2,6 +2,7 @@ package g4rb4g3.at.abrptransmitter;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.location.Location;
 import android.util.Log;
 
 import com.lge.ivi.carinfo.CarInfoManager;
@@ -27,6 +28,7 @@ import g4rb4g3.at.abrptransmitter.greencar.BatteryChargeListener;
 import g4rb4g3.at.abrptransmitter.greencar.EVPowerDisplayListener;
 import g4rb4g3.at.abrptransmitter.greencar.GreenCarGwEvP06ExtraListener;
 import g4rb4g3.at.abrptransmitter.hvac.HvacTempListener;
+import g4rb4g3.at.abrptransmitter.ui.SettingsFragment;
 
 public class ABetterRoutePlanner {
   public static final String TAG = "ABRPTransmitter";
@@ -123,11 +125,11 @@ public class ABetterRoutePlanner {
     tSendUpdate.schedule(ttSendUpdate, sendUpdateInterval, sendUpdateInterval);
   }
 
-  public static void updateGps(double lat, double lon, double alt) {
+  public static void updateGps(Location location) {
     try {
-      jTlmObj.put(ABETTERROUTEPLANNER_JSON_GPS_LAT, lat);
-      jTlmObj.put(ABETTERROUTEPLANNER_JSON_GPS_LON, lon);
-      jTlmObj.put(ABETTERROUTEPLANNER_JSON_GPS_ELEVATION, alt);
+      jTlmObj.put(ABETTERROUTEPLANNER_JSON_GPS_LAT, location.getLatitude());
+      jTlmObj.put(ABETTERROUTEPLANNER_JSON_GPS_LON, location.getLongitude());
+      jTlmObj.put(ABETTERROUTEPLANNER_JSON_GPS_ELEVATION, location.getAltitude());
     } catch (JSONException e) {
       Log.e(TAG, "error updating json object", e);
     }
@@ -216,9 +218,9 @@ public class ABetterRoutePlanner {
   }
 
   public static void applyAbrpSettings(Context context) {
-    SharedPreferences sp = context.getSharedPreferences(MainActivity.PREFERENCES_NAME, Context.MODE_PRIVATE);
-    mTransmitData = sp.getBoolean(MainActivity.PREFERENCES_TRANSMIT_DATA, false);
-    mAbetterrouteplanner_token = sp.getString(MainActivity.PREFERENCES_TOKEN, null);
+    SharedPreferences sp = context.getSharedPreferences(SettingsFragment.PREFERENCES_NAME, Context.MODE_PRIVATE);
+    mTransmitData = sp.getBoolean(SettingsFragment.PREFERENCES_TRANSMIT_DATA, false);
+    mAbetterrouteplanner_token = sp.getString(SettingsFragment.PREFERENCES_TOKEN, null);
   }
 
   @Override

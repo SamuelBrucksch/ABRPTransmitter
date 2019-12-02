@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/routeTableHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#CDCDCD">
+
+        <LinearLayout
+            android:layout_width="0px"
+            android:layout_height="match_parent"
+            android:layout_weight="0.25"
+            android:gravity="center|left">
+
+            <ImageButton
+                android:id="@+id/refreshButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:src="@android:drawable/ic_popup_sync"
+                android:text="Refresh"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="14dp" />
+
+            <CheckBox
+                android:id="@+id/ccsCheckbox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="CCS" />
+
+            <CheckBox
+                android:id="@+id/type2Checkbox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="Typ2" />
+
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/network"
+            android:layout_width="0px"
+            android:layout_height="match_parent"
+            android:layout_weight="0.20"
+            android:padding="5dp"
+            android:text="Network"
+            android:textAlignment="center"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textSize="14dp" />
+
+        <TextView
+            android:id="@+id/ccsStalls"
+            android:layout_width="0px"
+            android:layout_height="match_parent"
+            android:layout_weight="0.20"
+            android:padding="5dp"
+            android:text="CCS Stalls\n[Power]"
+            android:textAlignment="center"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textSize="14dp" />
+
+        <TextView
+            android:id="@+id/type2Stalls"
+            android:layout_width="0px"
+            android:layout_height="match_parent"
+            android:layout_weight="0.15"
+            android:padding="5dp"
+            android:text="Type2 Stalls\n[Power]"
+            android:textAlignment="center"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textSize="14dp" />
+
+        <TextView
+            android:id="@+id/distance"
+            android:layout_width="0px"
+            android:layout_height="match_parent"
+            android:layout_weight="0.10"
+            android:padding="5dp"
+            android:text="Distance\n(linear)"
+            android:textAlignment="center"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textSize="14dp" />
+
+        <TextView
+            android:id="@+id/totalDuration"
+            android:layout_width="0px"
+            android:layout_height="match_parent"
+            android:layout_weight="0.09"
+            android:padding="5dp"
+            android:text=""
+            android:textAlignment="center"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textSize="14dp" />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/chargeTable"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"></LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

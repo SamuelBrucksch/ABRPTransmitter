@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">ABRP Transmitter</string>
-    <string name="abrp_mail">ABRP token:</string>
-    <string name="save">Save</string>
-    <string name="transmit_data">Transmit data</string>
-    <string name="saved">Settings saved successfully!</string>
+    <string name="tab_chargers">Chargers</string>
+    <string name="tab_settings">Settings</string>
+    <string name="abrp_token">ABRP User Token</string>
+    <string name="transmit_data">Transmit Data</string>
 </resources>
