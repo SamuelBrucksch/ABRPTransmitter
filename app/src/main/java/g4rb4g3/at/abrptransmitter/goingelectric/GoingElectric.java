@@ -73,11 +73,11 @@ public class GoingElectric {
         }
     }
 
-    public void requestChargers(String plugs, Location currentPosition) {
+    public void requestChargers(String plugs, Location currentPosition, String token) {
         StringBuilder url = new StringBuilder(GOINGELECTRIC_URL)
                 .append(GOINGELECTRIC_URL_API_KEY)
                 .append("=")
-                .append(Resources.getSystem().getString(R.string.GOINGELECTRIC_API_KEY))
+                .append(token)
                 .append("&")
                 .append(GOINGELECTRIC_URL_API_LAT)
                 .append("=")

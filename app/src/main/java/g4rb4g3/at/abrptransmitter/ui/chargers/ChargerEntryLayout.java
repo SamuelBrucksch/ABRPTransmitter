@@ -81,9 +81,12 @@ public class ChargerEntryLayout extends LinearLayout {
             public void onClick(View v) {
                 Intent intent = new Intent();
                 intent.setAction("com.hkmc.intent.action.ACTION_ROUTE_SEARCH");
-                intent.putExtra("com.hkmc.navi.EXTRA_LATITUDE", entry.getLatitude());
-                intent.putExtra("com.hkmc.navi.EXTRA_LONGITUDE", entry.getLongitude());
+                intent.putExtra("com.hkmc.navi.EXTRA_LATITUDE", entry.getLatitude() + "");
+                intent.putExtra("com.hkmc.navi.EXTRA_LONGITUDE", entry.getLongitude()+ "");
                 intent.putExtra("com.hkmc.navi.EXTRA_KEYWORD", entry.getName());
+                v.getContext().sendBroadcast(intent);
+                intent = new Intent();
+                intent.setAction("com.hkmc.telematics.gis.action.FROM_BROWSER_TO_NAVI");
                 v.getContext().sendBroadcast(intent);
             }
         });

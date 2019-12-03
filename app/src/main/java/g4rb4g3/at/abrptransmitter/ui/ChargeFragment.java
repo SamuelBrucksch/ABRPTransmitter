@@ -2,6 +2,7 @@ package g4rb4g3.at.abrptransmitter.ui;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -40,7 +41,7 @@ public class ChargeFragment extends Fragment implements IChargers {
 
     public void requestChargers(String plugs) {
         Toast.makeText(getContext(), "Requesting chargers", Toast.LENGTH_SHORT).show();
-        GoingElectric.getInstance().requestChargers(plugs, NaviGpsChangedReceiver.getLastPosition());
+        GoingElectric.getInstance().requestChargers(plugs, NaviGpsChangedReceiver.getLastPosition(), getString(R.string.GOINGELECTRIC_API_KEY));
     }
 
     @Override
