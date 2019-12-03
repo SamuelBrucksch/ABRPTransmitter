@@ -35,7 +35,7 @@ public class ChargerEntryLayout extends LinearLayout {
     name.setGravity(Gravity.CENTER);
     name.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 16);
     name.setTextAlignment(TEXT_ALIGNMENT_CENTER);
-    name.setText(Html.fromHtml("<a href=\"https:" + entry.getUrl() + "\">" + entry.getName() + "</a>" + "<font color=red>" +(entry.isFaulty() ? " (!)" : "")));
+    name.setText(Html.fromHtml("<a href=\"https:" + entry.getUrl() + "\">" + entry.getName() + "</a>" + "<font color=red>" + (entry.isFaulty() ? " (!)" : "")));
     name.setWidth(0);
     name.setMovementMethod(LinkMovementMethod.getInstance());
     addView(name, new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT, 0.35f));
