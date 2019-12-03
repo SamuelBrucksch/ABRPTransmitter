@@ -20,7 +20,7 @@ public class ButtonReceiver extends BroadcastReceiver {
     if (mCalls == 2) {
       mCalls = 0;
       Intent i = new Intent(context, MainActivity.class);
-      i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+      i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_SINGLE_TOP); // do not start new task but use existing instead
       context.startActivity(i);
     }
   }
