@@ -13,7 +13,7 @@
         <LinearLayout
             android:layout_width="0px"
             android:layout_height="match_parent"
-            android:layout_weight="0.25"
+            android:layout_weight="0.35"
             android:gravity="center|left">
 
             <ImageButton
@@ -58,9 +58,9 @@
             android:id="@+id/ccsStalls"
             android:layout_width="0px"
             android:layout_height="match_parent"
-            android:layout_weight="0.20"
+            android:layout_weight="0.125"
             android:padding="5dp"
-            android:text="CCS Stalls\n[Power]"
+            android:text="CCS Stalls\n[Power kW]"
             android:textAlignment="center"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textSize="14dp" />
@@ -69,9 +69,9 @@
             android:id="@+id/type2Stalls"
             android:layout_width="0px"
             android:layout_height="match_parent"
-            android:layout_weight="0.15"
+            android:layout_weight="0.125"
             android:padding="5dp"
-            android:text="Type2 Stalls\n[Power]"
+            android:text="Type2 Stalls\n[Power kW]"
             android:textAlignment="center"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textSize="14dp" />

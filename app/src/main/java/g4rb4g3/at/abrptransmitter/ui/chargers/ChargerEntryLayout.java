@@ -27,6 +27,9 @@ public class ChargerEntryLayout extends LinearLayout {
             setBackgroundColor(Color.rgb(220, 220, 220));
         }
 
+        setGravity(Gravity.CENTER);
+        setTextAlignment(TEXT_ALIGNMENT_CENTER);
+
         TextView name = new TextView(context);
         name.setPadding(5, 5, 5, 5);
         name.setGravity(Gravity.CENTER);
@@ -35,7 +38,7 @@ public class ChargerEntryLayout extends LinearLayout {
         name.setText(Html.fromHtml("<a href=\"https:" + entry.getUrl() + "\">" + entry.getName() + (entry.isFaulty() ? " (!)" : "") + "</a>"));
         name.setWidth(0);
         name.setMovementMethod(LinkMovementMethod.getInstance());
-        addView(name, new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.MATCH_PARENT, 0.25f));
+        addView(name, new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT, 0.35f));
 
         TextView network = new TextView(context);
         network.setPadding(5, 5, 5, 5);
@@ -44,25 +47,25 @@ public class ChargerEntryLayout extends LinearLayout {
         network.setTextAlignment(TEXT_ALIGNMENT_CENTER);
         network.setText(entry.getNetwork());
         network.setWidth(0);
-        addView(network, new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.MATCH_PARENT, 0.20f));
+        addView(network, new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT, 0.20f));
 
         TextView ccsCount = new TextView(context);
-        ccsCount.setPadding(5, 5, 5, 5);
+        ccsCount.setPadding(5, 2, 5, 2);
         ccsCount.setGravity(Gravity.CENTER);
         ccsCount.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 16);
         ccsCount.setTextAlignment(TEXT_ALIGNMENT_CENTER);
-        ccsCount.setText(entry.getCcsStalls() > 0 ? entry.getCcsStalls() + "\n" + entry.getCcsPower() + " kW" : "");
+        ccsCount.setText(entry.getCcsStalls() > 0 ? entry.getCcsStalls() + "\n" + entry.getCcsPower() : "");
         ccsCount.setWidth(0);
-        addView(ccsCount, new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.MATCH_PARENT, 0.20f));
+        addView(ccsCount, new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT, 0.125f));
 
         TextView type2Count = new TextView(context);
-        type2Count.setPadding(5, 5, 5, 5);
+        type2Count.setPadding(5, 2, 5, 2);
         type2Count.setGravity(Gravity.CENTER);
         type2Count.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 16);
         type2Count.setTextAlignment(TEXT_ALIGNMENT_CENTER);
-        type2Count.setText(entry.getType2Stalls() > 0 ? entry.getType2Stalls() + "\n" + entry.getType2Power() + " kW" : "");
+        type2Count.setText(entry.getType2Stalls() > 0 ? entry.getType2Stalls() + "\n" + entry.getType2Power() : "");
         type2Count.setWidth(0);
-        addView(type2Count, new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.MATCH_PARENT, 0.15f));
+        addView(type2Count, new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT, 0.125f));
 
         DecimalFormat df = new DecimalFormat("##.# km");
         TextView distance = new TextView(context);
@@ -72,7 +75,7 @@ public class ChargerEntryLayout extends LinearLayout {
         distance.setTextAlignment(TEXT_ALIGNMENT_CENTER);
         distance.setText(df.format(entry.getDistanceTo(currentPosition)));
         distance.setWidth(0);
-        addView(distance, new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.MATCH_PARENT, 0.10f));
+        addView(distance, new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT, 0.10f));
 
         // TODO correct action?
         Button toNavi = new Button(context, null, R.attr.buttonStyleSmall);
